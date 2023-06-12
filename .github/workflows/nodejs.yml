@@ -26,7 +26,7 @@ jobs:
       - name: Run tests coverage
         run: pnpm test:cov
 
-      - name: send telegram message on push
+      - name: send telegram message
         uses: appleboy/telegram-action@master
         with:
           format: markdown
