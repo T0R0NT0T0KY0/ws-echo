@@ -15,7 +15,7 @@
     "prepare": "pnpm run build && husky install",
     "test": "jest",
     "test:watch": "jest --watch",
-    "test:cov": "jest --coverage"
+    "test:cov": "jest --reporters=default --reporters=jest-junit -t"
   },
   "keywords": [],
   "author": "Dmitry_The_Fucke_LV",
@@ -29,7 +29,6 @@
     "class-transformer": "0.5.1",
     "class-validator": "0.14.0",
     "dotenv": "^16.0.3",
-    "jest-html-reporters": "^3.1.4",
     "reflect-metadata": "0.1.13",
     "rimraf": "4.4.1",
     "rxjs": "7.5.5",
@@ -54,6 +53,8 @@
     "eslint-plugin-prettier": "^4.0.0",
     "husky": "^8.0.3",
     "jest": "28.1.2",
+    "jest-cli": "28.1.2",
+    "jest-junit": "16.0.0",
     "prettier": "^2.3.2",
     "supertest": "6.2.4",
     "ts-jest": "28.0.8",
@@ -76,21 +77,13 @@
     "collectCoverageFrom": [
       "**/*.(t|j)s"
     ],
-    "coverageDirectory": "../coverage",
     "testEnvironment": "node",
     "transformIgnorePatterns": [
       "node_modules/(?!@atlaskit)"
     ],
     "reporters": [
       "default",
-      [
-        "jest-html-reporters",
-        {
-          "publicPath": "./html-report",
-          "filename": "report.html",
-          "openReport": true
-        }
-      ]
+      "jest-junit"
     ]
   }
 }
