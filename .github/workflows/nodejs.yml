@@ -36,7 +36,6 @@ jobs:
           to: ${{ secrets.TELEGRAM_CHAT_ID }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
           message: |
-            chat: ${{ secrets.TELEGRAM_CHAT_ID }}
             ${{ github.actor }} created commit:
             Commit message: ${{ github.event.commits[0].message }}
             
