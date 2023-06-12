@@ -1,12 +1,8 @@
 name: Node.js CI
 
 on:
-  push:
-    branches:
-      - prod
-  pull_request:
-    branches:
-      - prod
+  - push
+  - pull_request
 
 jobs:
   build:
@@ -37,12 +33,15 @@ jobs:
           to: ${{ secrets.TELEGRAM_CHAT_ID }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
           message: |
-            🚀*${{ github.actor }}* created commit 🛠:
-            Branch ![🏝](tg://emoji?id=5226429003946008634)Name: *${{ github.ref_name }}*
-            Status: `${{ job.status == 'success' && 'Success ![✅](tg://emoji?id=5427257822121305923)' || job.status == 'failure' && 'Failure ![🆘](tg://emoji?id=5238025132177369293)' || 'Cancelled ![⚠️](tg://emoji?id=5447644880824181073)' }}`
+            🚀New Commit 🛠:
+            Author: '*${{ github.actor }}*'
+          
+            Branch [🏝](tg://emoji?id=5226429003946008634): '*${{ github.ref_name }}*'
+          
+            Status: *${{job.status}}* ${{ job.status == 'success' && '![✅](tg://emoji?id=5427257822121305923)' || job.status == 'failure' && '![🆘](tg://emoji?id=5238025132177369293)' || '![⚠️](tg://emoji?id=5447644880824181073)' }}
+          
             Commit message: 
             ```text
             ${{ github.event.commits[0].message }}
             ```
-          
             See changes: https://github.com/${{ github.repository }}/commit/${{github.sha}}
