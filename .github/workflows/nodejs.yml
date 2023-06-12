@@ -31,10 +31,15 @@ jobs:
         run: pnpm test:cov
 
       - name: notification
-        if: cancelled() == false
-        uses: xinthink/action-telegram@v1.1
+        if: always()
+        uses: appleboy/telegram-action@master
         with:
-          botToken: ${{ secrets.BOT_TOKEN }}
-          chatId: ${{ secrets.CHAT_ID }}
-          jobStatus: ${{ job.status }}
-          skipSuccess: false
+          to: ${{ secrets.CHAT_ID }}
+          token: ${{ secrets.BOT_TOKEN }}
+          message: |
+            ${{ github.actor }} created commit:
+            Commit message: ${{ github.event.commits[0].message }}
+            
+            Repository: ${{ github.repository }}
+            
+            See changes: https://github.com/${{ github.repository }}/commit/${{github.sha}}
