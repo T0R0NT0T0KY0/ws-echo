@@ -34,11 +34,10 @@ jobs:
           token: ${{ secrets.TELEGRAM_TOKEN }}
           message: |
             🚀New Commit 🛠:
+            
             Author: '*${{ github.actor }}*'
-          
-            Branch [🏝](tg://emoji?id=5226429003946008634): '*${{ github.ref_name }}*'
-          
-            Status: *${{job.status}}* ${{ job.status == 'success' && '![✅](tg://emoji?id=5427257822121305923)' || job.status == 'failure' && '![🆘](tg://emoji?id=5238025132177369293)' || '![⚠️](tg://emoji?id=5447644880824181073)' }}
+            Branch 🌴: '*${{ github.ref_name }}*'
+            Status: *${{job.status}}* ${{ job.status == 'success' && '[✅](tg://emoji?id=5427257822121305923)' || job.status == 'failure' && '[🆘](tg://emoji?id=5238025132177369293)' || '[⚠️](tg://emoji?id=5447644880824181073)' }}
           
             Commit message: 
             ```text
