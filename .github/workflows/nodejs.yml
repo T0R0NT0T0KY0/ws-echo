@@ -37,11 +37,11 @@ jobs:
           to: ${{ secrets.TELEGRAM_CHAT_ID }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
           message: |
-            🚀`${{ github.actor }}` created commit 🛠:
-            Branch 🌳Name: `${{ github.ref_name }}`
-            Status: `${{ job.status == 'success' && 'Success ✅' || job.status == 'failure' && 'Failure 🆘' || 'Cancelled ⚠️' }}`
+            🚀*${{ github.actor }}* created commit 🛠:
+            Branch ![🏝](tg://emoji?id=5226429003946008634)Name: *${{ github.ref_name }}*
+            Status: `${{ job.status == 'success' && 'Success ![✅](tg://emoji?id=5427257822121305923)' || job.status == 'failure' && 'Failure ![🆘](tg://emoji?id=5238025132177369293)' || 'Cancelled ![⚠️](tg://emoji?id=5447644880824181073)' }}`
             Commit message: 
-            ```
+            ```text
             ${{ github.event.commits[0].message }}
             ```
           
