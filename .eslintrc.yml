@@ -1,0 +1,50 @@
+env:
+   browser: false
+   es2022: true
+   es6: true
+extends:
+   - eslint:recommended
+   - plugin:@typescript-eslint/recommended
+   - plugin:@typescript-eslint/eslint-recommended
+   - plugin:import/warnings
+   - plugin:import/typescript
+   - prettier
+parser: "@typescript-eslint/parser"
+parserOptions:
+   project: "./tsconfig.json"
+   sourceType: module
+plugins:
+   - "@typescript-eslint"
+   - "import"
+   - "prefer-arrow"
+rules:
+   no-duplicate-imports: error
+   no-var:
+      - error
+   no-empty: error
+   no-empty-pattern: error
+   no-fallthrough:
+      - error
+      - commentPattern: "break[\\s\\w]*omitted"
+   linebreak-style:
+      - error
+      - unix
+   quotes:
+      - error
+      - double
+   semi:
+      - error
+      - always
+   object-curly-spacing:
+      - error
+      - always
+   comma-dangle:
+      - error
+      - always-multiline
+   "@typescript-eslint/no-namespace": off
+   "@typescript-eslint/no-empty-interface": off
+   "@typescript-eslint/no-unused-vars": error
+   "import/prefer-default-export": "off"
+   "import/no-extraneous-dependencies":
+      - error
+      - devDependencies: true
