@@ -49,6 +49,7 @@ jobs:
 
       - name: send telegram message
         uses: appleboy/telegram-action@master
+        if: always()
         with:
           format: markdown
           to: ${{ secrets.TELEGRAM_CHAT_ID }}
