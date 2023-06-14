@@ -1,12 +1,12 @@
 ### Stage 1: Build
-FROM node:16-alpine AS base
+FROM node:19-alpine AS base
 RUN npm install -g pnpm
 
 ### Stage 2: Download dependencies
 FROM base as dependencies
 WORKDIR /app
 COPY package.json pnpm-lock.yaml tsconfig.build.json tsconfig.json ./
-RUN pnpm install
+RUN pnpm install --frozen-lockfile
 
 ### Stage 3: Build + Delete dev dependencies
 FROM base as build
@@ -15,7 +15,6 @@ COPY . .
 COPY --from=dependencies /app/node_modules ./node_modules
 RUN pnpm build
 RUN pnpm prune --prod
-
 
 ### Stage 4: Final
 FROM base as deploy
