@@ -5,7 +5,7 @@ RUN npm --location=global install  pnpm
 ### Stage 2: download dependencies
 FROM base as dependencies
 WORKDIR /app
-COPY package.json pnpm-lock.yaml tsconfig.build.json tsconfig.josn ./
+COPY package.json pnpm-lock.yaml tsconfig.build.json tsconfig.json ./
 RUN pnpm install --frozen-lockfile
 
 ### Stage 3: build + delete dev dependencies
