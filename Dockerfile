@@ -5,7 +5,7 @@ RUN npm install -g pnpm
 ### Stage 2: Download dependencies
 FROM base as dependencies
 WORKDIR /app
-COPY package.json pnpm-lock.yaml tsconfig.build.json ./
+COPY package.json pnpm-lock.yaml tsconfig.build.json tsconfig.json ./
 RUN pnpm install
 
 ### Stage 3: Build + Delete dev dependencies
