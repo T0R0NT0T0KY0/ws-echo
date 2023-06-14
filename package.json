@@ -16,7 +16,7 @@
     "eslint:fix": "eslint src migrations api --fix",
     "test": "jest  --reporters=default --reporters=jest-junit",
     "test:watch": "jest --watchAll  --reporters=default --reporters=jest-junit",
-    "test:cov": "jest --coverage  --reporters=default --reporters=jest-junit",
+    "test:cov": "jest --reporters=default --reporters=jest-junit -t",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand  --reporters=default --reporters=jest-junit",
     "test:e2e": "jest --config src/__tests__/jest-e2e.json  --reporters=default --reporters=jest-junit",
     "lint": "npx eslint \"src/**/*.ts\" --fix",
