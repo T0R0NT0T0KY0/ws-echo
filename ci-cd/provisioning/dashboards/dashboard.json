@@ -1,0 +1,68 @@
+{
+  "dashboard": {
+    "id": null,
+    "title": "Process CPU Metrics",
+    "panels": [
+      {
+        "id": 1,
+        "title": "CPU User Seconds",
+        "type": "graph",
+        "targets": [
+          {
+            "expr": "process_cpu_user_seconds_total",
+            "refId": "A"
+          }
+        ],
+        "yaxes": [
+          {
+            "format": "s"
+          },
+          {}
+        ]
+      },
+      {
+        "id": 2,
+        "title": "CPU System Seconds",
+        "type": "graph",
+        "targets": [
+          {
+            "expr": "process_cpu_system_seconds_total",
+            "refId": "A"
+          }
+        ],
+        "yaxes": [
+          {
+            "format": "s"
+          },
+          {}
+        ]
+      },
+      {
+        "id": 3,
+        "title": "Total CPU Seconds",
+        "type": "graph",
+        "targets": [
+          {
+            "expr": "process_cpu_seconds_total",
+            "refId": "A"
+          }
+        ],
+        "yaxes": [
+          {
+            "format": "s"
+          },
+          {}
+        ]
+      }
+    ],
+    "time": {
+      "from": "now-1h",
+      "to": "now"
+    },
+    "refresh": "5s",
+    "schemaVersion": 22,
+    "version": 0
+  },
+  "folderId": null,
+  "overwrite": true
+}

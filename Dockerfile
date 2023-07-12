@@ -11,7 +11,7 @@ RUN pnpm install --frozen-lockfile
 ### Stage 3: Build + Delete dev dependencies
 FROM base as build
 WORKDIR /app
-COPY . .
+COPY .. .
 COPY --from=dependencies /app/node_modules ./node_modules
 RUN pnpm build
 RUN pnpm prune --prod

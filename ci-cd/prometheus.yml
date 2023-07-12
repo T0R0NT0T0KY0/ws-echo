@@ -1,0 +1,11 @@
+global:
+  scrape_interval: 5s # Интервал сбора метрик
+
+scrape_configs:
+  - job_name: 'nodejs' # Имя job для мониторинга приложения Node.js
+    static_configs:
+      - targets: ['nodejs:3000'] # Адрес и порт вашего приложения Node.js
+    metrics_path: /metrics
+
+remote_write:
+  - url: 'http://grafana:8080/api/prom/push'  # Здесь указывается URL для отправки метрик в Grafana

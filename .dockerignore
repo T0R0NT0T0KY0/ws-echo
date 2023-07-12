@@ -35,7 +35,7 @@ lerna-debug.log*
 .gitignore
 
 #docker
-docker-compose.yml
+ci-cd/docker-compose.yml
 Dockerfile
 
 #lint
