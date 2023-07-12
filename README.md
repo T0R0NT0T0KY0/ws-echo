@@ -66,13 +66,13 @@ Here's an example of using `wscat` to connect to ws-echo server:
 
 <div align="center">
   <a href="https://grafana.com/" target="blank">
-   <img src="https://chrisreeves.co.nz/wp-content/uploads/2020/06/Grafana_logo.png" width="150" alt="Grafana Logo" />
+   <img src="./img/grafana-logo.png" width="150" alt="Grafana Logo" />
 </a>
   <a href="https://prometheus.io/" target="blank">
-<img src="https://elastisys.com/wp-content/uploads/2020/05/prometheus-icon-color-1536x1536.png" width="150" alt="Prometheus Logo" />
+<img src="./img/prometheus-logo.png" width="150" alt="Prometheus Logo" />
 </a>
   <a href="https://nodejs.org/" target="blank">
-<img src="https://www.dnex.tech/img/logo/kisspng-node-js.png" width="150" alt="Node Logo" />
+<img src="./img/node-logo.png" width="150" alt="Node Logo" />
 </a>
 </div>
 
@@ -80,7 +80,10 @@ Here's an example of using `wscat` to connect to ws-echo server:
 ```
    docker-compose -f ./ci-cd/docker-compose.yml
 ```
-1) [Node](http://localhost:3000/metrics) Metrics
+![build-1.png](img%2Fbuild-1.png)
+![build-2.png](img%2Fbuild-2.png)
+
+1)[Node](http://localhost:3000/metrics) Metrics
 ![node-metrics.png](img%2Fnode-metrics.png)
 
 1) [Prometheus](http://localhost:9090/targets) Targets Endpoint
@@ -100,7 +103,8 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 use `appleboy/telegram-action` for [github action](.github/workflows/nodejs.yml) notification.
 Для быстрого получения информации о ci/cd в удобном месте
-
+![tg-2.png](img%2Ftg-2.png)
+![tg-1.png](img%2Ftg-1.png)
 ---
 
 Enjoy using ws-echo for WebSocket testing with Socket.IO! If you have any questions or need assistance, feel free to
