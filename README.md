@@ -83,13 +83,13 @@ Here's an example of using `wscat` to connect to ws-echo server:
 ![build-1.png](img%2Fbuild-1.png)
 ![build-2.png](img%2Fbuild-2.png)
 
-1)[Node](http://localhost:3000/metrics) Metrics
+2) [Node](http://localhost:3000/metrics) Metrics
 ![node-metrics.png](img%2Fnode-metrics.png)
 
-1) [Prometheus](http://localhost:9090/targets) Targets Endpoint
+3) [Prometheus](http://localhost:9090/targets) Targets Endpoint
 ![prometheus-target.png](img%2Fprometheus-target.png)
 
-1) [Grafana](http://localhost:8080/) Create Dashboard
+4) [Grafana](http://localhost:8080/) Create Dashboard
 
 Для входа логин: user / пароль: password
 В примере мониторим загруженность CPU, оперативной памяти и event loop lag. 
