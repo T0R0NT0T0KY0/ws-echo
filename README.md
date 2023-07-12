@@ -62,14 +62,46 @@ Here's an example of using `wscat` to connect to ws-echo server:
 
    Press `Ctrl+C` to terminate the `wscat` session and close the WebSocket connection.
 
+## Grafana Prometheus
+
+<div align="center">
+  <a href="https://grafana.com/" target="blank">
+   <img src="https://chrisreeves.co.nz/wp-content/uploads/2020/06/Grafana_logo.png" width="150" alt="Grafana Logo" />
+</a>
+  <a href="https://prometheus.io/" target="blank">
+<img src="https://elastisys.com/wp-content/uploads/2020/05/prometheus-icon-color-1536x1536.png" width="150" alt="Prometheus Logo" />
+</a>
+  <a href="https://nodejs.org/" target="blank">
+<img src="https://www.dnex.tech/img/logo/kisspng-node-js.png" width="150" alt="Node Logo" />
+</a>
+</div>
+
+1) start docker compose
+```
+   docker-compose -f ./ci-cd/docker-compose.yml
+```
+1) [Node](http://localhost:3000/metrics) Metrics
+![node-metrics.png](img%2Fnode-metrics.png)
+
+1) [Prometheus](http://localhost:9090/targets) Targets Endpoint
+![prometheus-target.png](img%2Fprometheus-target.png)
+
+1) [Grafana](http://localhost:8080/) Create Dashboard
+
+Для входа логин: user / пароль: password
+В примере мониторим загруженность CPU, оперативной памяти и event loop lag. 
+![grafana-dashboard.png](img%2Fgrafana-dashboard.png)
+
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
 ## Telegram Notification
-use `appleboy/telegram-action` for [github action](.github/workflows/nodejs.yml) notification. 
 
+use `appleboy/telegram-action` for [github action](.github/workflows/nodejs.yml) notification.
+Для быстрого получения информации о ci/cd в удобном месте
 
 ---
 
-Enjoy using ws-echo for WebSocket testing with Socket.IO! If you have any questions or need assistance, feel free to reach out.
+Enjoy using ws-echo for WebSocket testing with Socket.IO! If you have any questions or need assistance, feel free to
+reach out.
